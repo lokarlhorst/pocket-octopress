@@ -15,7 +15,7 @@ Pocket API Parser for Octopress Blogs based on pocket-ruby gem
 +gem 'i18n'
 ```
 
-``` ruby generate_token.rb
+```ruby
 require "rubygems"
 require "sinatra"
 require "pocket"
