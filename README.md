@@ -3,6 +3,18 @@ pocket-octopress
 
 Pocket API Parser for Octopress Blogs based on pocket-ruby gem
 
+To add a functionality for Pocket Link posting in Octopress Blogs I used the [pocket-ruby](https://github.com/sotsy/pocket-ruby) Gem. I have modified the Gem- and Rakefile to add a task for generating Pocket linklists from my personal Pocket links.
+
+## Usage ##
+
+```rake new_pocket['DAYS']```
+
+For ```DAYS``` set the number of days from now in the past. For my personal blog I use 7 days to get 1 Week of Pocket links.
+
+## Installation ##
+
+Add the following changes to your Octopress Gemfile
+
 ```diff
 --- a/Gemfile
 +++ b/Gemfile
@@ -14,6 +26,14 @@ Pocket API Parser for Octopress Blogs based on pocket-ruby gem
 +gem 'active_support'
 +gem 'i18n'
 ```
+
+Create a pocket app at http://getpocket.com/developer/apps/
+
+Change ```yourconsumerkey``` in ```generate_token.rb``` to your consumer key from the created Pocket app.
+
+Generate an access token
+
+generate_token.rb to generate an access_token. In Terminal you should run the script with ```ruby generate_token.rb```. It starts a webserver session on ```localhost:4567```. Access it on your browser and connect with pocket. Then you will recieve your access_token.
 
 ```ruby
 require "rubygems"
@@ -66,6 +86,8 @@ get "/oauth/callback" do
   redirect "/"
 end
 ```
+
+Change your Rakefile with the following diff. Make sure you enter your correct consumer key and access token recieved from ```generate_token.rb```.
 
 ```diff
 --- a/Rakefile
