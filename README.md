@@ -5,6 +5,8 @@ Pocket API Parser for Octopress Blogs based on pocket-ruby gem
 
 To add a functionality for Pocket Link posting in Octopress Blogs I used the [pocket-ruby](https://github.com/sotsy/pocket-ruby) Gem. I have modified the Gem- and Rakefile to add a task for generating Pocket linklists from my personal Pocket links.
 
+More information and Infos [here](http://sots.name/blog/2013/09/27/extend-octopress-with-link-generator-for-pocket/)
+
 ## Usage ##
 
 ```rake new_pocket['DAYS']```
